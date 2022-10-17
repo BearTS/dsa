@@ -41,7 +41,22 @@ int partition(int arr[], int start, int end)
  
     return pivotIndex;
 }
+ 
+void quickSort(int arr[], int start, int end)
+{
+ 
+    if (start >= end)
+        return;
+ 
+    int p = partition(arr, start, end);
+ 
+    cout<<"Pivot: "<<arr[p]<<"\n";
+    quickSort(arr, start, p - 1);
+    printArray(arr, end+1);
 
+    quickSort(arr, p + 1, end);
+}
+ 
 int main()
 {
  
@@ -56,6 +71,8 @@ int main()
         cout<<"Element: ";
         cin>>arr[i];
     }
+ 
+    quickSort(arr, 0, n - 1);
  
     cout<<"\nSorted Array:\n";   
     printArray(arr, n);
