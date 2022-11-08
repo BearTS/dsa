@@ -35,7 +35,7 @@ class Stack {
     // Undeflow condition (Stack is Empty)
     if (top == -1) {
       cout << "UNDERFLOW" << endl;
-      return 6969;
+      return 99999;
     }
 
     // If the stack is not empty

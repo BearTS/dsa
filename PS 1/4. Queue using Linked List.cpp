@@ -42,7 +42,7 @@ class Node {
     // Checking if the queue is empty
     if (f == NULL) {
       cout << "UNDERFLOW" << endl;
-      return 6969;
+      return 99999;
     }
 
     // If the queue is not empty then we remove the last element

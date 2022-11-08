@@ -35,7 +35,7 @@ class Queue {
     // Undeflow condition (Queue is Empty)
     if (r == f) {
       cout << "UNDERFLOW" << endl;
-      return 6969;
+      return 99999;
     }
 
     // If the queue is not empty

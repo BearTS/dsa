@@ -41,7 +41,7 @@ class Node {
     // Checking if the list is empty
     if (f == NULL) {
       cout << "UNDERFLOW" << endl;
-      return 6969;
+      return 99999;
     }
 
     // If the list is not empty then we pop the first element
@@ -89,7 +89,7 @@ class Node {
     // Checking if the list is empty
     if (f == NULL) {
       cout << "UNDERFLOW" << endl;
-      return 6969;
+      return 99999;
     }
 
     // If the list is not empty then we pop the last element
@@ -155,7 +155,7 @@ class Node {
     // Checking if the stack is empty
     if (f == NULL) {
       cout << "UNDERFLOW" << endl;
-      return 6969;
+      return 99999;
     }
 
     // If the stack is not empty then we pop the element as per user requirement

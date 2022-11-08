@@ -39,7 +39,7 @@ class Node {
     // Checking if the stack is empty
     if (top == NULL) {
       cout << "UNDERFLOW" << endl;
-      return 6969;
+      return 99999;
     }
 
     // If the stack is not empty then we pop the last element
