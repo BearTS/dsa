@@ -59,7 +59,6 @@ void dijkstra(int graph[V][V], int src)
 }
 int main()
 {
- cout<<"Name - Raghav Trivedi, Registration number - 21BCE0417"<<endl;
  /*int graph[V][V];
  cout<<"Give 9*9 input or uncomment 2d-matrix";
  for(int i=0; i<V; i++){
