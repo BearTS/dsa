@@ -43,13 +43,9 @@ void postfix() {
   len = s.length();
   top = -1;
   for (j = 0; j < len; j++) {
-    if ((s[j] == ' ') || (s[j] == '\t'))  // to ignore unwanted spaces left in
-                                          // between the characters of the
-                                          // expression
+    if ((s[j] == ' ') || (s[j] == '\t'))  
       continue;
-    else if ((isdigit(s[j])) ||
-             (isalpha(
-                 s[j])))  // this condition will evaluate to true for an operand
+    else if ((isdigit(s[j])) || (isalpha(s[j])))  // this condition will evaluate to true for an operand
     {  // an operand can be a digit or alphabet and so simply add it to
       post.append(1, s[j]);  // post string
     } else if (s[j] == '(')  // if character is '(' push it onto the stack
@@ -61,11 +57,8 @@ void postfix() {
         if (opr == '(')  // if popped character is '(' simply ignore
           break;
         else
-          post.append(1,
-                      opr);  // else append the popped character to post string
-      } while (
-          opr !=
-          '(');  // the above steps are repeated till an '(' is encountered.
+          post.append(1,opr);  // else append the popped character to post string
+      } while (opr != '(');  // the above steps are repeated till an '(' is encountered.
     } else       // this 'else' part will handle operators
     {
       if (top == -1)  // if stack is empty, simply push the current character
