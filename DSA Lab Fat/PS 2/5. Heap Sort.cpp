@@ -1,49 +1,55 @@
-#include <iostream>
-using namespace std;
-
-void heap(int arr[], int n, int i) {
-    int largest = i; 
-    int l = 2 * i + 1; 
-    int r = 2 * i + 2;
-    if (l < n && arr[l] > arr[largest])
-        largest = l;
-    if (r < n && arr[r] > arr[largest])
-        largest = r;
+// Heap Sort in C++
+  
+  #include <iostream>
+  using namespace std;
+  
+  void heapify(int arr[], int n, int i) {
+    // Find largest among root, left child and right child
+    int largest = i;
+    int left = 2 * i + 1;
+    int right = 2 * i + 2;
+  
+    if (left < n && arr[left] > arr[largest])
+      largest = left;
+  
+    if (right < n && arr[right] > arr[largest])
+      largest = right;
+  
+    // Swap and continue heapifying if root is not largest
     if (largest != i) {
-        swap(arr[i], arr[largest]);
-        heap(arr, n, largest);
+      swap(arr[i], arr[largest]);
+      heapify(arr, n, largest);
     }
-}
-
-
-void heapSort(int arr[], int n) {
+  }
+  
+  // main function to do heap sort
+  void heapSort(int arr[], int n) {
+    // Build max heap
     for (int i = n / 2 - 1; i >= 0; i--)
-        heap(arr, n, i);
-
+      heapify(arr, n, i);
+  
+    // Heap sort
     for (int i = n - 1; i >= 0; i--) {
-        swap(arr[0], arr[i]);
-        heap(arr, i, 0);
+      swap(arr[0], arr[i]);
+  
+      // Heapify root element to get highest element at root again
+      heapify(arr, i, 0);
     }
-}
-
-
-void printArray(int arr[], int n) {
+  }
+  
+  // Print an array
+  void printArray(int arr[], int n) {
     for (int i = 0; i < n; ++i)
-        cout << arr[i] << " ";
+      cout << arr[i] << " ";
     cout << "\n";
-}
-
-int main() {
-    int n,i;
-    cout<<"Enter number of elements to be sorted: ";
-    cin>>n;
-    int arr[n];
-    cout<<"Enter data in the array :"<<endl;
-    for(i=0;i<n;i++)
-    cin>>arr[i];
-
+  }
+  
+  // Driver code
+  int main() {
+    int arr[] = {1, 12, 9, 5, 6, 10};
+    int n = sizeof(arr) / sizeof(arr[0]);
     heapSort(arr, n);
-    cout << "Sorted array using heap sort is"<< endl;
+  
+    cout << "Sorted array is \n";
     printArray(arr, n);
-}
-
+  }
